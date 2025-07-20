@@ -9,13 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id();               // Auto-incrementing ID
+            $table->string('title');    // Title of the post
+            $table->text('content');    // Main content (can be long)
+            $table->timestamps();       // created_at and updated_at
         });
     }
+
 
     /**
      * Reverse the migrations.
